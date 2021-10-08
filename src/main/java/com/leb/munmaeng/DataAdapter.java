@@ -44,7 +44,8 @@ public class DataAdapter extends BaseAdapter {
 
     @Override
     public Object getItem(int i) {
-        return data.get(i);
+        return
+                data.get(i);
     }
 
     @Override
