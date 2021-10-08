@@ -22,17 +22,25 @@
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="111dp"
+            android:layout_height="105dp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="TITLE"
             android:textColor="#000000"
             android:textSize="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="110dp" />
 
         <TextView
             android:id="@+id/content"
@@ -42,18 +50,19 @@
             android:layout_marginHorizontal="10dp"
             android:fontFamily="@font/nanumbarungothic"
             android:gravity="center_horizontal"
+            android:lineSpacingExtra="5dp"
             android:paddingHorizontal="15dp"
             android:paddingTop="15dp"
             android:text="word+content"
             android:textAlignment="viewStart"
-            android:lineSpacingExtra ="5dp"
             android:textColor="#000000"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintVertical_bias="0.56" />
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintVertical_bias="0.215" />
 
         <Button
             android:id="@+id/btn_quiz"
@@ -104,26 +113,26 @@
             android:text="TextView"
             android:textColor="#000000"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:paddingHorizontal="15dp"
             android:text="TextView"
             android:textColor="#363333"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/content"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

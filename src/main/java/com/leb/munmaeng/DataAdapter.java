@@ -16,6 +16,8 @@ import androidx.cardview.widget.CardView;
 
 import java.util.List;
 
+import kotlin.reflect.KVisibility;
+
 public class DataAdapter extends BaseAdapter {
 
     Context context;
@@ -83,11 +85,27 @@ public class DataAdapter extends BaseAdapter {
         });
 
         CardView card_flip = view.findViewById(R.id.card_flip);
+        Button btn_quiz = view.findViewById(R.id.btn_quiz);
 
         card_flip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 card_flip.getLayoutParams().height = 600;
+
+
+            }
+        });
+
+        btn_quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, QuizActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("단어", data.get(i).getWord());
+                intent.putExtra("뜻", data.get(i).getMean());
+                intent.putExtra("틀린답1", "우정");
+                intent.putExtra("틀린답2", "사랑");
+                context.startActivity(intent);
             }
         });
 
