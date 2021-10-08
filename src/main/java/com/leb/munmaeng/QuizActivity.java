@@ -1,7 +1,10 @@
 package com.leb.munmaeng;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Random;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -18,7 +22,8 @@ public class QuizActivity extends AppCompatActivity {
     String ans1, ans2, ans3, quiz;
     TextView tv_quiz;
     Button btn_answer1, btn_answer2, btn_answer3;
-
+    Context context;
+    Random random;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,8 @@ public class QuizActivity extends AppCompatActivity {
         btn_answer3 = findViewById(R.id.btn_answer3);
         tv_quiz = findViewById(R.id.tv_quiz);
         intent = getIntent();
+
+        String[] array = new String[3];
 
         ans1 = intent.getStringExtra("단어");
         ans2 = intent.getStringExtra("틀린답1");
@@ -46,6 +53,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (btn_answer1.getText().equals(ans1)){
                     Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();
                 }
@@ -56,6 +64,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (btn_answer2.getText().equals(ans1)){
                     Toast.makeText(getApplicationContext(),"정답입니다", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();
                 }
@@ -67,6 +76,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (btn_answer3.getText().equals(ans1)){
                     Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();
                 }

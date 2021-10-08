@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MunMaeng"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SignupActivity"
+            android:exported="true" />
+        <activity
             android:name=".QuizActivity"
             android:exported="true" />
         <activity
