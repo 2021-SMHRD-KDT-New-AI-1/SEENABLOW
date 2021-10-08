@@ -22,8 +22,7 @@ public class DataAdapter extends BaseAdapter {
     int layout;
     List<DataVO> data;
     LayoutInflater inflater;//xml파일을 view객체로 변환하는 역활
-    boolean drawToggle;
-    View targetView, lv;
+
 
 
     public DataAdapter(Context context, int layout, List<DataVO> data) {
@@ -80,6 +79,13 @@ public class DataAdapter extends BaseAdapter {
         });
 
         CardView card_flip = view.findViewById(R.id.card_flip);
+
+        card_flip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                card_flip.getLayoutParams().height = 600;
+            }
+        });
 
 
 
