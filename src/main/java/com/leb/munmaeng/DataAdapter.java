@@ -59,9 +59,13 @@ public class DataAdapter extends BaseAdapter {
         }
         TextView title = view.findViewById(R.id.title);
         TextView contect = view.findViewById(R.id.content);
+        TextView textView2 = view.findViewById(R.id.textView2);
+        TextView textView3 = view.findViewById(R.id.textView3);
         Button btn = view.findViewById(R.id.btn_find);
         title.setText(data.get(i).getTitle());
-        contect.setText(data.get(i).getWord() + "\n" + data.get(i).getMean() + "\n" + data.get(i).getContent());
+        textView2.setText(data.get(i).getWord());
+        textView3.setText(data.get(i).getMean());
+        contect.setText( data.get(i).getContent());
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
