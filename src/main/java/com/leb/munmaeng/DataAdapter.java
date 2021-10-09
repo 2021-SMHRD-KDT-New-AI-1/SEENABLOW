@@ -24,7 +24,7 @@ public class DataAdapter extends BaseAdapter {
     int layout;
     List<DataVO> data;
     LayoutInflater inflater;//xml파일을 view객체로 변환하는 역활
-
+    Intent intent;
 
 
     public DataAdapter(Context context, int layout, List<DataVO> data) {
@@ -60,6 +60,9 @@ public class DataAdapter extends BaseAdapter {
         if (view == null) {
             view = inflater.inflate(layout, null);
         }
+
+
+
         TextView title = view.findViewById(R.id.title);
         TextView contect = view.findViewById(R.id.content);
         TextView textView2 = view.findViewById(R.id.textView2);
