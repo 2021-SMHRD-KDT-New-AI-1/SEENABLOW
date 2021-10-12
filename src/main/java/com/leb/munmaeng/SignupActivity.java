@@ -42,14 +42,13 @@ public class SignupActivity extends AppCompatActivity {
         btn_signup =findViewById(R.id.btn_signup);
         rg_gender = findViewById(R.id.rg_gender);
 
-
         SharedPreferences pref = getSharedPreferences("isFirst", SignupActivity.MODE_PRIVATE);
         boolean first = pref.getBoolean("isFirst", false);
 
         SharedPreferences pref_data = getSharedPreferences("username",MODE_PRIVATE);
 
         SharedPreferences.Editor editor = pref.edit();
-        SharedPreferences.Editor editor_data = pref.edit();
+        SharedPreferences.Editor editor_data = pref_data.edit();
         if(first==false){
 
             if (requestQueue == null) {
@@ -89,13 +88,21 @@ public class SignupActivity extends AppCompatActivity {
                     });
                     requestQueue.add(request);
 
-                    editor_data.putString("name", username);
+
+                    editor_data.apply();
                     editor_data.commit();
                     editor.putBoolean("isFirst",true);
+                    editor.apply();
                     editor.commit();
 
+
                     Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("age", age);
+                    intent.putExtra("gender", gender);
                     startActivity(intent);
+
+
                 }
 
             });

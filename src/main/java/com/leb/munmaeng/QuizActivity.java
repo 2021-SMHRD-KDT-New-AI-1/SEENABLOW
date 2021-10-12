@@ -41,6 +41,7 @@ public class QuizActivity extends AppCompatActivity {
 
         String url = "http://172.30.1.52:3002/solving";
 
+
         String[] array = new String[3];
 
         ans1 = intent.getStringExtra("단어");
@@ -52,7 +53,7 @@ public class QuizActivity extends AppCompatActivity {
         Button[] answer_array = new Button[]{btn_answer1, btn_answer2, btn_answer3};
 
         Collections.shuffle(Arrays.asList(answer_array));
-
+        Collections.shuffle(Arrays.asList(array));
        for(int i =0; i<answer_array.length; i++){
            answer_array[i].setText(array[i]);
        }

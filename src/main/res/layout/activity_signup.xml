@@ -35,7 +35,7 @@
                 app:srcCompat="@drawable/top1" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/userinfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"

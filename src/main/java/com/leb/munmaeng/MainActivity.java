@@ -12,9 +12,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,19 +23,20 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-
+    TextView username, userinfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         card_nov =findViewById(R.id.card_nov);
         card_poem =findViewById(R.id.card_poem);
         card_news =findViewById(R.id.card_news);
         card_column = findViewById(R.id.card_column);
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.naviView);
+
+        username = findViewById(R.id.user_name);
+        userinfo = findViewById(R.id.userinfo);
 
 
         toolbar = findViewById(R.id.toolbar);
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         //뒤로가기 버튼 이미지 적용
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
+
+
+
 
         card_nov.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -95,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
+
+
         return super.onOptionsItemSelected(item);
     }
 

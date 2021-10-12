@@ -29,7 +29,7 @@
                 app:srcCompat="@drawable/top_background" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/userinfo"
                 android:layout_width="3000dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center_horizontal"
