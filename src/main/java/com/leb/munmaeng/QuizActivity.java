@@ -14,18 +14,19 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class QuizActivity extends AppCompatActivity {
-
-
     Intent intent;
     String ans1, ans2, ans3, quiz;
     TextView tv_quiz;
     Button btn_answer1, btn_answer2, btn_answer3;
     Context context;
-    Random random;
     RequestQueue requestQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,18 +48,23 @@ public class QuizActivity extends AppCompatActivity {
         ans3 = intent.getStringExtra("틀린답2");
         quiz = intent.getStringExtra("뜻");
 
-        btn_answer1.setText(ans1);
-        btn_answer2.setText(ans2);
-        btn_answer3.setText(ans3);
+        array = new String[]{ans1, ans2, ans3};
+        Button[] answer_array = new Button[]{btn_answer1, btn_answer2, btn_answer3};
+
+        Collections.shuffle(Arrays.asList(answer_array));
+
+       for(int i =0; i<answer_array.length; i++){
+           answer_array[i].setText(array[i]);
+       }
         tv_quiz.setText(quiz);
-
-
 
         btn_answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (btn_answer1.getText().equals(ans1)){
                     Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();
+
+                    tv_quiz.setText(quiz);
                     onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();
