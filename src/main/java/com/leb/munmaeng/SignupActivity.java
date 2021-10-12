@@ -75,7 +75,6 @@ public class SignupActivity extends AppCompatActivity {
                     url += "&age=" + age;
                     url += "&gender=" + gender;
 
-
                     StringRequest request = new StringRequest(
                             Request.Method.GET,
                             url,
