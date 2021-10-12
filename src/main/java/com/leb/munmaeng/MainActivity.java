@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         //액션바 객체
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         //뒤로가기 버튼 이미지 적용
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
