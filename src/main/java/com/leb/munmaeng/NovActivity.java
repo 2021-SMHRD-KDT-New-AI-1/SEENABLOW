@@ -34,19 +34,20 @@ public class NovActivity extends AppCompatActivity {
     List<DataVO> data;
     ListView lv;
     Button btn_find;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nov);
         btn_find = findViewById(R.id.btn_find);
-
         lv = findViewById(R.id.lv);
-
         String url = "http://172.30.1.52:3002/";
 
         Intent intent = getIntent();
         url+=intent.getStringExtra("name");
+
+
 
         data = new ArrayList<DataVO>();
         DataAdapter adapter = new DataAdapter(getApplicationContext(), R.layout.datalist,data);

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 import kotlin.reflect.KVisibility;
@@ -60,8 +61,6 @@ public class DataAdapter extends BaseAdapter {
         if (view == null) {
             view = inflater.inflate(layout, null);
         }
-
-
 
         TextView title = view.findViewById(R.id.title);
         TextView contect = view.findViewById(R.id.content);
