@@ -65,8 +65,6 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (btn_answer1.getText().equals(ans1)){
                     Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();
-
-                    tv_quiz.setText(quiz);
                     onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();

@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     TextView username, userinfo;
-
+    TextView navi_textview, navi_textview2;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +35,14 @@ public class MainActivity extends AppCompatActivity {
         card_news =findViewById(R.id.card_news);
         card_column = findViewById(R.id.card_column);
         drawerLayout = findViewById(R.id.drawer_layout);
+        intent = getIntent();
 
-        username = findViewById(R.id.user_name);
-        userinfo = findViewById(R.id.userinfo);
-
+        navigationView =  (NavigationView) findViewById(R.id.naviView);
+        navigationView.setNavigationItemSelectedListener(this::onOptionsItemSelected);
+        View nav_header_view = navigationView.getHeaderView(0);
+        navi_textview = (TextView)nav_header_view.findViewById(R.id.user_name);
+        View nav_header_view2 = navigationView.getHeaderView(0);
+        navi_textview2 = (TextView)nav_header_view2.findViewById(R.id.userinfo);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -95,7 +100,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+
             case android.R.id.home:
+                navi_textview.setText("고성욱");
+                navi_textview2.setText("28세 남");
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
