@@ -120,8 +120,16 @@ public class DataAdapter extends BaseAdapter {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("단어", data.get(i).getWord());
                 intent.putExtra("뜻", data.get(i).getMean());
-                intent.putExtra("틀린답1", "우정");
-                intent.putExtra("틀린답2", "사랑");
+                if(i == 9){
+                    intent.putExtra("틀린답1", data.get(i-2).getWord());
+                    intent.putExtra("틀린답2", data.get(i-1).getWord());
+                }else if(i ==0) {
+                    intent.putExtra("틀린답1", data.get(i+2).getWord());
+                    intent.putExtra("틀린답2", data.get(i+1).getWord());
+                }else{
+                    intent.putExtra("틀린답1", data.get(i-2).getWord());
+                    intent.putExtra("틀린답2", data.get(i+2).getWord());
+                }
                 context.startActivity(intent);
             }
         });

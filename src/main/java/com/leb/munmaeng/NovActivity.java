@@ -47,8 +47,6 @@ public class NovActivity extends AppCompatActivity {
         Intent intent = getIntent();
         url+=intent.getStringExtra("name");
 
-
-
         data = new ArrayList<DataVO>();
         DataAdapter adapter = new DataAdapter(getApplicationContext(), R.layout.datalist,data);
 
@@ -57,19 +55,17 @@ public class NovActivity extends AppCompatActivity {
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
-
                 StringRequest request = new StringRequest(
                         Request.Method.GET,
                         url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-
                                 try {
-
                                     JSONArray list = new JSONArray(response);
 
                                     for (int i = 0; i < list.length(); i++) {
+
                                         JSONObject data1 = (JSONObject) list.get(i);
 
                                         String title = data1.getString("title");
@@ -80,7 +76,6 @@ public class NovActivity extends AppCompatActivity {
                                         DataVO vo = new DataVO(title, word, content, mean);
 
                                         data.add(vo);
-
                                     }
 
                                 } catch (JSONException e) {
@@ -97,6 +92,5 @@ public class NovActivity extends AppCompatActivity {
                         }
                 );
                 requestQueue.add(request);
-
     }
 }

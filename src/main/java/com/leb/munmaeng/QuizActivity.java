@@ -54,6 +54,7 @@ public class QuizActivity extends AppCompatActivity {
 
         Collections.shuffle(Arrays.asList(answer_array));
         Collections.shuffle(Arrays.asList(array));
+
        for(int i =0; i<answer_array.length; i++){
            answer_array[i].setText(array[i]);
        }
