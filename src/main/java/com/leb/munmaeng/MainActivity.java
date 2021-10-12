@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     TextView navi_textview, navi_textview2;
     String username, age, gender;
     Intent intent;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,7 +114,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
+
     }
+
+
 
 
     @Override

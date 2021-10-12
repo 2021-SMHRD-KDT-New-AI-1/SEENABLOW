@@ -1,6 +1,5 @@
 package com.leb.munmaeng;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -10,14 +9,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 
-import java.net.URISyntaxException;
 import java.util.List;
-
-import kotlin.reflect.KVisibility;
 
 public class DataAdapter extends BaseAdapter {
 
@@ -62,11 +57,11 @@ public class DataAdapter extends BaseAdapter {
             view = inflater.inflate(layout, null);
         }
 
-        TextView title = view.findViewById(R.id.title);
-        TextView contect = view.findViewById(R.id.content);
-        TextView textView2 = view.findViewById(R.id.textView2);
-        TextView textView3 = view.findViewById(R.id.textView3);
-        Button btn = view.findViewById(R.id.btn_find);
+        TextView title = view.findViewById(R.id.name_acount);
+        TextView contect = view.findViewById(R.id.comment);
+        TextView textView2 = view.findViewById(R.id.tv_quizNum);
+        TextView textView3 = view.findViewById(R.id.tv_number);
+        Button btn = view.findViewById(R.id.btn_home);
         title.setText(data.get(i).getTitle());
         textView2.setText(data.get(i).getWord());
         textView3.setText(data.get(i).getMean());
@@ -88,7 +83,7 @@ public class DataAdapter extends BaseAdapter {
         });
 
         CardView card_flip = view.findViewById(R.id.card_flip);
-        Button btn_quiz = view.findViewById(R.id.btn_quiz);
+        Button btn_quiz = view.findViewById(R.id.btn_back);
         isclick = false;
         card_flip.setOnClickListener(new View.OnClickListener() {
             @Override
