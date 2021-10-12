@@ -87,7 +87,9 @@ public class SignupActivity extends AppCompatActivity {
                         }
                     });
                     requestQueue.add(request);
-
+                    editor_data.putString("username", username);
+                    editor_data.putString("age", age);
+                    editor_data.putString("gender", gender);
 
                     editor_data.apply();
                     editor_data.commit();

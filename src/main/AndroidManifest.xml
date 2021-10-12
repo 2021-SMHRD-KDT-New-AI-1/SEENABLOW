@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MunMaeng"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AccountActivity"
+            android:exported="true" />
+        <activity
             android:name=".SignupActivity"
             android:exported="true">
             <intent-filter>
@@ -29,9 +32,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

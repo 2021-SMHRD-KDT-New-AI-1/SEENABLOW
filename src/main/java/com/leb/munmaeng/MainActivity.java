@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
-    TextView username, userinfo;
     TextView navi_textview, navi_textview2;
+    String username, age, gender;
     Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
         //뒤로가기 버튼 이미지 적용
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
-
-
-
+        SharedPreferences sharedPreferences = getSharedPreferences("username", MODE_PRIVATE);
+         username = sharedPreferences.getString("username", "");
+         age = sharedPreferences.getString("age", "");
+         gender =sharedPreferences.getString("gender", "");
 
         card_nov.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
 
             case android.R.id.home:
-                navi_textview.setText("고성욱");
-                navi_textview2.setText("28세 남");
+                navi_textview.setText(username);
+                navi_textview2.setText(age+" 세 "+gender);
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
