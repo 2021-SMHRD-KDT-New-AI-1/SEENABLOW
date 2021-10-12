@@ -26,7 +26,7 @@ public class DataAdapter extends BaseAdapter {
     List<DataVO> data;
     LayoutInflater inflater;//xml파일을 view객체로 변환하는 역활
     Intent intent;
-
+    boolean isclick;
 
     public DataAdapter(Context context, int layout, List<DataVO> data) {
         this.context = context;
@@ -89,15 +89,26 @@ public class DataAdapter extends BaseAdapter {
 
         CardView card_flip = view.findViewById(R.id.card_flip);
         Button btn_quiz = view.findViewById(R.id.btn_quiz);
-
+        isclick = false;
         card_flip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             btn.setVisibility(btn.VISIBLE);
-             btn_quiz.setVisibility(btn_quiz.VISIBLE);
-             contect.setVisibility(contect.VISIBLE);
-             textView2.setVisibility(textView2.VISIBLE);
-             textView3.setVisibility(textView3.VISIBLE);
+
+            if(isclick == false) {
+                btn.setVisibility(btn.VISIBLE);
+                btn_quiz.setVisibility(btn_quiz.VISIBLE);
+                contect.setVisibility(contect.VISIBLE);
+                textView2.setVisibility(textView2.VISIBLE);
+                textView3.setVisibility(textView3.VISIBLE);
+                isclick = true;
+            }else {
+                btn.setVisibility(btn.GONE);
+                btn_quiz.setVisibility(btn_quiz.GONE);
+                contect.setVisibility(contect.GONE);
+                textView2.setVisibility(textView2.GONE);
+                textView3.setVisibility(textView3.GONE);
+                isclick = false;
+            }
 
             }
         });

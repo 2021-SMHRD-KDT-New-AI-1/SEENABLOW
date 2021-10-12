@@ -36,7 +36,7 @@ public class QuizActivity extends AppCompatActivity {
         btn_answer3 = findViewById(R.id.btn_answer3);
         tv_quiz = findViewById(R.id.tv_quiz);
         intent = getIntent();
-        String user ="";
+//        String user =getSharedPreferences();
 
         String url = "http://172.30.1.52:3002/solving";
 
@@ -58,7 +58,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (btn_answer1.getText().equals(ans1)){
-                    Toast.makeText(getApplicationContext(),"정답입니다!"+user, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();
@@ -69,7 +69,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (btn_answer2.getText().equals(ans1)){
-                    Toast.makeText(getApplicationContext(),"정답입니다"+user, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"정답입니다", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();
@@ -81,7 +81,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (btn_answer3.getText().equals(ans1)){
-                    Toast.makeText(getApplicationContext(),"정답입니다!"+user, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();
                     onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();
