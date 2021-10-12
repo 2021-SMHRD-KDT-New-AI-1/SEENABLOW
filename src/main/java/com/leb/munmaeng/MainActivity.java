@@ -16,11 +16,13 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class MainActivity extends AppCompatActivity {
     CardView card_nov, card_poem, card_news, card_column;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-
+    private NavigationView navigationView;
 
 
     @Override
@@ -32,10 +34,16 @@ public class MainActivity extends AppCompatActivity {
         card_poem =findViewById(R.id.card_poem);
         card_news =findViewById(R.id.card_news);
         card_column = findViewById(R.id.card_column);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.naviView);
+
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //액션바 객체
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        //뒤로가기 버튼 이미지 적용
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
         card_nov.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -84,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
     @Override
     public void onBackPressed() {
         AlertDialog.Builder alert_ex = new AlertDialog.Builder(this);
