@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+
 import java.util.List;
 import java.util.Random;
 
@@ -24,6 +26,7 @@ public class QuizActivity extends AppCompatActivity {
     Button btn_answer1, btn_answer2, btn_answer3;
     Context context;
     Random random;
+    RequestQueue requestQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,9 @@ public class QuizActivity extends AppCompatActivity {
         btn_answer3 = findViewById(R.id.btn_answer3);
         tv_quiz = findViewById(R.id.tv_quiz);
         intent = getIntent();
+
+
+        String url = "http://172.30.1.52:3002/solving";
 
         String[] array = new String[3];
 
@@ -86,9 +92,8 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
-
-
-
-
     }
+
+
+
 }

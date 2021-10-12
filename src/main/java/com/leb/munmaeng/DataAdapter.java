@@ -94,8 +94,11 @@ public class DataAdapter extends BaseAdapter {
         card_flip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                card_flip.getLayoutParams().height = 600;
-
+             btn.setVisibility(btn.VISIBLE);
+             btn_quiz.setVisibility(btn_quiz.VISIBLE);
+             contect.setVisibility(contect.VISIBLE);
+             textView2.setVisibility(textView2.VISIBLE);
+             textView3.setVisibility(textView3.VISIBLE);
 
             }
         });

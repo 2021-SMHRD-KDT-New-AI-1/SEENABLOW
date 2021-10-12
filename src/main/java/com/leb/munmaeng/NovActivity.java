@@ -41,8 +41,6 @@ public class NovActivity extends AppCompatActivity {
         setContentView(R.layout.activity_nov);
         btn_find = findViewById(R.id.btn_find);
 
-
-
         lv = findViewById(R.id.lv);
 
         String url = "http://172.30.1.52:3002/";
@@ -78,9 +76,7 @@ public class NovActivity extends AppCompatActivity {
                                         String word = data1.getString("word");
                                         String mean = data1.getString("mean");
 
-
                                         DataVO vo = new DataVO(title, word, content, mean);
-
 
                                         data.add(vo);
 
@@ -100,10 +96,6 @@ public class NovActivity extends AppCompatActivity {
                         }
                 );
                 requestQueue.add(request);
-
-
-
-
 
     }
 }

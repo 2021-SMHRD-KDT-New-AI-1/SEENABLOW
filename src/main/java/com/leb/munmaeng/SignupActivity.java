@@ -82,18 +82,12 @@ public class SignupActivity extends AppCompatActivity {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-
-
-
                                 }
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-
                         }
-                    }
-
-                    );
+                    });
                     requestQueue.add(request);
 
                     editor_data.putString("name", username);
