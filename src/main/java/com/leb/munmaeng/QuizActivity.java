@@ -24,7 +24,7 @@ import java.util.Random;
 public class QuizActivity extends AppCompatActivity {
     Intent intent;
     String ans1, ans2, ans3, quiz;
-    TextView tv_quiz;
+    TextView tv_quiz, tv_number;
     Button btn_answer1, btn_answer2, btn_answer3;
     Context context;
     RequestQueue requestQueue;
@@ -65,6 +65,7 @@ public class QuizActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (btn_answer1.getText().equals(ans1)){
                     Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();
+
                     onBackPressed();
                 }else{
                     Toast.makeText(getApplicationContext(),"다시 선택해주세요!", Toast.LENGTH_SHORT).show();

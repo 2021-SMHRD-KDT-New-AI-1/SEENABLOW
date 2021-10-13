@@ -103,11 +103,18 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.menu_item1){
+            Intent intent = new Intent(MainActivity.this, AccountActivity.class);
+            startActivity(intent);
+        }
+
         switch (item.getItemId()){
 
             case android.R.id.home:
                 navi_textview.setText(username);
                 navi_textview2.setText(age+" 세 "+gender);
+
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
