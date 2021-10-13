@@ -36,10 +36,8 @@ public class ScreenService extends Service {
              }
             }
         }
-        return START_REDELIVER_INTENT;
+        return START_STICKY;
     }
-
-
 
     @Override
     public void onDestroy() {

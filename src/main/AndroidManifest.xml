@@ -3,7 +3,7 @@
     package="com.leb.munmaeng">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
 
     <application
         android:allowBackup="false"
@@ -27,9 +27,9 @@
             </intent-filter>
         </activity>
         <receiver android:name=".ScreenReceiver"></receiver>
-        <service android:name="ScreenService"></service>
+        <service android:name="ScreenService"
+            android:enabled="true"></service>
         <activity android:name=".LockscreenActivity"></activity>
-
         <activity
             android:name=".QuizActivity"
             android:exported="true" />

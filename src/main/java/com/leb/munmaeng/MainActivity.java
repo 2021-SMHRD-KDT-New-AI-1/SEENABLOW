@@ -13,6 +13,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -111,6 +112,11 @@ public class MainActivity extends AppCompatActivity {
         if(id == R.id.menu_item1){
             Intent intent = new Intent(MainActivity.this, AccountActivity.class);
             startActivity(intent);
+        }else if(id == R.id.menu_item2){
+            Log.d("실행", "ㅇㅇ");
+            Intent intent = new Intent(getApplicationContext(), ScreenService.class);
+            startService(intent);
+
         }
 
         switch (item.getItemId()){
