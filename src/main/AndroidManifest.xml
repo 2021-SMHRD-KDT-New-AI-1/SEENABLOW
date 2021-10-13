@@ -13,9 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MunMaeng"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".LockscreenActivity"
-            android:exported="true" />
+
         <activity
             android:name=".AccountActivity"
             android:exported="true" />
@@ -28,6 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".ScreenReceiver"></receiver>
+        <service android:name="ScreenService"></service>
+        <activity android:name=".LockscreenActivity"></activity>
+
         <activity
             android:name=".QuizActivity"
             android:exported="true" />

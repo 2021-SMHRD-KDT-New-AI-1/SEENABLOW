@@ -18,7 +18,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/title1"
+            android:id="@+id/lock_word"
             android:layout_width="match_parent"
             android:layout_height="105dp"
             android:fontFamily="sans-serif-medium"
@@ -42,7 +42,7 @@
             app:layout_constraintGuide_begin="110dp" />
 
         <TextView
-            android:id="@+id/content"
+            android:id="@+id/lock_mean"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_gravity="center"
@@ -64,7 +64,7 @@
             app:layout_constraintVertical_bias="0.215" />
 
         <Button
-            android:id="@+id/btn_home"
+            android:id="@+id/btn_start"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="bottom|right"
@@ -78,7 +78,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/content"
+            app:layout_constraintTop_toBottomOf="@+id/lock_mean"
             tools:ignore="SpeakableTextPresentCheck">
 
         </Button>
@@ -95,7 +95,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title1" />
+            app:layout_constraintTop_toBottomOf="@+id/lock_word" />
 
         <TextView
             android:id="@+id/mean"

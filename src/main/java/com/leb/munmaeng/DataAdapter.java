@@ -57,11 +57,11 @@ public class DataAdapter extends BaseAdapter {
             view = inflater.inflate(layout, null);
         }
 
-        TextView title = view.findViewById(R.id.title1);
-        TextView contect = view.findViewById(R.id.content);
+        TextView title = view.findViewById(R.id.lock_word);
+        TextView contect = view.findViewById(R.id.lock_mean);
         TextView textView2 = view.findViewById(R.id.tv_quizNum);
         TextView textView3 = view.findViewById(R.id.mean);
-        Button btn = view.findViewById(R.id.btn_home);
+        Button btn = view.findViewById(R.id.btn_start);
         title.setText(data.get(i).getTitle());
         textView2.setText(data.get(i).getWord());
         textView3.setText(data.get(i).getMean());

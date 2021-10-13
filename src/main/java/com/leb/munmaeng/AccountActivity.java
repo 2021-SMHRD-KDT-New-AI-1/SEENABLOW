@@ -19,8 +19,8 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account);
 
 
-        btn_home = findViewById(R.id.btn_home);
-        name_acount = findViewById(R.id.title1);
+        btn_home = findViewById(R.id.btn_start);
+        name_acount = findViewById(R.id.lock_word);
         tv_number = findViewById(R.id.mean);
       SharedPreferences sharedPreferences = getSharedPreferences("username", MODE_PRIVATE);
       username = sharedPreferences.getString("username", "");

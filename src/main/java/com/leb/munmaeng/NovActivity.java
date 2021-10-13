@@ -40,7 +40,7 @@ public class NovActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_nov);
-        btn_find = findViewById(R.id.btn_home);
+        btn_find = findViewById(R.id.btn_start);
         lv = findViewById(R.id.lv);
         String url = "http://172.30.1.52:3002/";
 
