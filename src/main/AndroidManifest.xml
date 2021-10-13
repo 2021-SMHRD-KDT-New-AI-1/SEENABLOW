@@ -3,7 +3,8 @@
     package="com.leb.munmaeng">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MunMaeng"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".LockscreenActivity"
+            android:exported="true" />
         <activity
             android:name=".AccountActivity"
             android:exported="true" />
@@ -32,7 +36,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

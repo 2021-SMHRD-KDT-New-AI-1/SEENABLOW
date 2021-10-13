@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //해당 액티비티를 잠금화면에 띄워줌
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
-                | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
+
 
         setContentView(R.layout.activity_main);
         card_nov =findViewById(R.id.card_nov);

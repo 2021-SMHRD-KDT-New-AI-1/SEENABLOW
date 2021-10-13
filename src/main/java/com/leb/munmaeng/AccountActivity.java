@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,8 +20,8 @@ public class AccountActivity extends AppCompatActivity {
 
 
         btn_home = findViewById(R.id.btn_home);
-        name_acount = findViewById(R.id.name_acount);
-        tv_number = findViewById(R.id.tv_number);
+        name_acount = findViewById(R.id.title1);
+        tv_number = findViewById(R.id.mean);
       SharedPreferences sharedPreferences = getSharedPreferences("username", MODE_PRIVATE);
       username = sharedPreferences.getString("username", "");
 
