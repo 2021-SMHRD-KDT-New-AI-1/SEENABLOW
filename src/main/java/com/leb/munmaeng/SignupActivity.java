@@ -34,7 +34,6 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
         et_username = findViewById(R.id.et_username);
         et_age = findViewById(R.id.et_age);
         rb_man =findViewById(R.id.rb_man);
@@ -68,7 +67,6 @@ public class SignupActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "성별을 선택하세요", Toast.LENGTH_SHORT).show();
                     }
 
-
                     String url = "http://172.30.1.52:3002/signup";
                     url += "?username=" + username;
                     url += "&age=" + age;
@@ -97,14 +95,11 @@ public class SignupActivity extends AppCompatActivity {
                     editor.apply();
                     editor.commit();
 
-
                     Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                     intent.putExtra("username", username);
                     intent.putExtra("age", age);
                     intent.putExtra("gender", gender);
                     startActivity(intent);
-
-
                 }
 
             });
@@ -113,7 +108,6 @@ public class SignupActivity extends AppCompatActivity {
 
             Intent intent = new Intent(SignupActivity.this, MainActivity.class);
             startActivity(intent);
-
 
         }
 

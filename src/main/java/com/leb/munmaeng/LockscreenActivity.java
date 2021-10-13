@@ -46,13 +46,19 @@ public class LockscreenActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
                 WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
 
-        lock_word.setText("되나욥?");
+        lock_word.setText("단속");
+        lock_mean.setText("규제하거나 바로잡아 이끄는 일.");
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+
+                moveTaskToBack(true); // 태스크를 백그라운드로 이동
+                finishAndRemoveTask(); // 액티비티 종료 + 태스크 리스트에서 지우기
+
+                System.exit(0);
             }
         });
+
     }
 }

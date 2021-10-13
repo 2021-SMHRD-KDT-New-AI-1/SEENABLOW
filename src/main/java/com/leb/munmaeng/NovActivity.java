@@ -41,10 +41,13 @@ public class NovActivity extends AppCompatActivity {
         Intent intent = getIntent();
         url+=intent.getStringExtra("name");
 
+
         data = new ArrayList<DataVO>();
         DataAdapter adapter = new DataAdapter(getApplicationContext(), R.layout.datalist,data);
 
         lv.setAdapter(adapter);
+
+
 
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -70,6 +73,10 @@ public class NovActivity extends AppCompatActivity {
                                         DataVO vo = new DataVO(title, word, content, mean);
 
                                         data.add(vo);
+                                        Intent intent = new Intent(NovActivity.this, LockscreenActivity.class);
+                                        intent.putExtra("word", word);
+                                        intent.putExtra("mean", mean);
+
                                     }
 
                                 } catch (JSONException e) {

@@ -22,6 +22,7 @@ public class ScreenService extends Service {
         mReceiver = new ScreenReceiver();
         IntentFilter filter =new IntentFilter(Intent.ACTION_SCREEN_OFF);
         registerReceiver(mReceiver, filter);
+
     }
 
     @Override

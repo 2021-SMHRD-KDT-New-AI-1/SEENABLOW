@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TextView navi_textview, navi_textview2;
     String username, age, gender;
     Intent intent;
+    boolean isclick;
 
 
     @Override
@@ -108,14 +110,24 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        isclick = false;
         int id = item.getItemId();
         if(id == R.id.menu_item1){
             Intent intent = new Intent(MainActivity.this, AccountActivity.class);
             startActivity(intent);
         }else if(id == R.id.menu_item2){
             Log.d("실행", "ㅇㅇ");
-            Intent intent = new Intent(getApplicationContext(), ScreenService.class);
-            startService(intent);
+            if(isclick==false) {
+                startService(new Intent(getApplicationContext(), ScreenService.class));
+                isclick=true;
+            }else{
+                stopService(new Intent(getApplicationContext(), ScreenService.class));
+                isclick=false;
+            }
+//            startService(intent);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent);
+            }
 
         }
 
