@@ -69,7 +69,6 @@ public class QuizActivity extends AppCompatActivity {
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
-
         btn_answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
