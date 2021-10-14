@@ -44,7 +44,7 @@
             app:layout_constraintGuide_begin="110dp" />
 
         <TextView
-            android:id="@+id/lock_mean"
+            android:id="@+id/acc_mean"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_gravity="center"
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toStartOf="@+id/btn_start"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lock_mean"
+            app:layout_constraintTop_toBottomOf="@+id/acc_mean"
             app:layout_constraintVertical_bias="0.511"
             tools:ignore="SpeakableTextPresentCheck">
 

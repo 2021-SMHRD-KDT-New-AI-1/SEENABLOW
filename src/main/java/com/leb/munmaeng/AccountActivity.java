@@ -21,9 +21,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class AccountActivity extends AppCompatActivity {
- TextView name_acount, tv_number;
+ TextView name_acount, tv_number, acc_mean;
  Button btn_home;
- String username, title;
+ String username;
+ int title;
  RequestQueue requestQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account);
 
 
-
+        acc_mean = findViewById(R.id.acc_mean);
         btn_home = findViewById(R.id.btn_start);
         name_acount = findViewById(R.id.lock_word);
         tv_number = findViewById(R.id.mean);
@@ -60,8 +61,14 @@ public class AccountActivity extends AppCompatActivity {
 
                                 JSONObject data1 = (JSONObject) list.get(i);
 
-                                title = data1.getString("count(case when username = '"+username+"' then 1 end)");
-                                tv_number.setText(title+"개");
+                                title = data1.getInt("count(case when username = '"+username+"' then 1 end)");
+                                tv_number.setText((title/2)+"개");
+
+                                if(title/2>5){
+                                    acc_mean.setText("좀 하시네요?");
+                                }else if(title/2<5){
+                                    acc_mean.setText("공부좀 하세요");
+                                }
                             }
 
                         } catch (JSONException e) {

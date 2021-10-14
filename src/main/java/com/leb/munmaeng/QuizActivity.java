@@ -31,7 +31,7 @@ import java.util.Random;
 public class QuizActivity extends AppCompatActivity {
     Intent intent;
     String ans1, ans2, ans3, quiz;
-    TextView tv_quiz, tv_number;
+    TextView tv_quiz;
     Button btn_answer1, btn_answer2, btn_answer3;
     Context context;
     RequestQueue requestQueue;
@@ -82,7 +82,6 @@ public class QuizActivity extends AppCompatActivity {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    Log.d("실행", "ㅇㅇ");
                                 }
                             }, new Response.ErrorListener() {
                         @Override
@@ -109,8 +108,7 @@ public class QuizActivity extends AppCompatActivity {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    Log.d("실행", "ㅇㅇ");
-                                }
+                                                                    }
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
@@ -123,7 +121,6 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
         });
-
         btn_answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,12 +135,10 @@ public class QuizActivity extends AppCompatActivity {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
-                                    Log.d("실행", "ㅇㅇ");
                                 }
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Log.d("실행", "안됨");
                         }
                     });
                     requestQueue.add(request);

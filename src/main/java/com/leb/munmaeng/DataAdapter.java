@@ -58,7 +58,7 @@ public class DataAdapter extends BaseAdapter {
         }
 
         TextView title = view.findViewById(R.id.lock_word);
-        TextView contect = view.findViewById(R.id.lock_mean);
+        TextView contect = view.findViewById(R.id.acc_mean);
         TextView textView2 = view.findViewById(R.id.tv_quizNum);
         TextView textView3 = view.findViewById(R.id.mean);
         Button btn = view.findViewById(R.id.btn_start);

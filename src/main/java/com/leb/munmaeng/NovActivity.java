@@ -41,13 +41,10 @@ public class NovActivity extends AppCompatActivity {
         Intent intent = getIntent();
         url+=intent.getStringExtra("name");
 
-
         data = new ArrayList<DataVO>();
         DataAdapter adapter = new DataAdapter(getApplicationContext(), R.layout.datalist,data);
 
         lv.setAdapter(adapter);
-
-
 
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
