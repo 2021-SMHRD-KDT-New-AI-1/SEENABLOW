@@ -40,19 +40,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main);
-        card_nov =findViewById(R.id.card_nov);
-        card_poem =findViewById(R.id.card_poem);
-        card_news =findViewById(R.id.card_news);
+        card_nov = findViewById(R.id.card_nov);
+        card_poem = findViewById(R.id.card_poem);
+        card_news = findViewById(R.id.card_news);
         card_column = findViewById(R.id.card_column);
         drawerLayout = findViewById(R.id.drawer_layout);
         intent = getIntent();
 
-        navigationView =  (NavigationView) findViewById(R.id.naviView);
+        navigationView = (NavigationView) findViewById(R.id.naviView);
         navigationView.setNavigationItemSelectedListener(this::onOptionsItemSelected);
         View nav_header_view = navigationView.getHeaderView(0);
-        navi_textview = (TextView)nav_header_view.findViewById(R.id.user_name);
+        navi_textview = (TextView) nav_header_view.findViewById(R.id.user_name);
         View nav_header_view2 = navigationView.getHeaderView(0);
-        navi_textview2 = (TextView)nav_header_view2.findViewById(R.id.userinfo);
+        navi_textview2 = (TextView) nav_header_view2.findViewById(R.id.userinfo);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
         SharedPreferences sharedPreferences = getSharedPreferences("username", MODE_PRIVATE);
-         username = sharedPreferences.getString("username", "");
-         age = sharedPreferences.getString("age", "");
-         gender =sharedPreferences.getString("gender", "");
+        username = sharedPreferences.getString("username", "");
+        age = sharedPreferences.getString("age", "");
+        gender = sharedPreferences.getString("gender", "");
 
         card_nov.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,49 +105,34 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         isclick = false;
         int id = item.getItemId();
-        if(id == R.id.menu_item1){
+        if (id == R.id.menu_item1) {
             Intent intent = new Intent(MainActivity.this, AccountActivity.class);
             startActivity(intent);
-        }else if(id == R.id.menu_item2){
+        } else if (id == R.id.menu_item2) {
             Log.d("실행", "ㅇㅇ");
-            if(isclick==false) {
-                startService(new Intent(getApplicationContext(), ScreenService.class));
-                isclick=true;
-            }else{
-                stopService(new Intent(getApplicationContext(), ScreenService.class));
-                isclick=false;
-            }
-//            startService(intent);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+            Intent intent = new Intent(getApplicationContext(), ScreenService.class);
+            if (Build.VERSION.SDK_INT >= 28) {
                 startForegroundService(intent);
+                Log.v("asdf", "startService!");
             }
 
         }
-
-        switch (item.getItemId()){
-
+        switch (item.getItemId()) {
             case android.R.id.home:
                 navi_textview.setText(username);
-                navi_textview2.setText(age+" 세 "+gender);
-
+                navi_textview2.setText(age + " 세 " + gender);
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }
-
-
         return super.onOptionsItemSelected(item);
-
     }
-
-
-
 
     @Override
     public void onBackPressed() {

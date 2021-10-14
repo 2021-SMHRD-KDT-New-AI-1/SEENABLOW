@@ -31,7 +31,6 @@ public class AccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-
         acc_mean = findViewById(R.id.acc_mean);
         btn_home = findViewById(R.id.btn_start);
         name_acount = findViewById(R.id.lock_word);
@@ -80,7 +79,6 @@ public class AccountActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
             }
         });
-
 
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override

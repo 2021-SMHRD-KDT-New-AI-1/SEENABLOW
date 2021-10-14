@@ -18,7 +18,6 @@ public class LockscreenActivity extends AppCompatActivity {
     TextView lock_word, lock_mean;
     Button btn_start;
     List<DataVO> data;
-    Random random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,6 @@ public class LockscreenActivity extends AppCompatActivity {
         btn_start = findViewById(R.id.btn_start);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
                 WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD |
-                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
                 WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
 
         lock_word.setText("단속");
@@ -40,9 +38,10 @@ public class LockscreenActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //어플 태스크 목록에서 완전 삭제 기능
-                moveTaskToBack(true); // 태스크를 백그라운드로 이동
-                finishAndRemoveTask(); // 액티비티 종료 + 태스크 리스트에서 지우기
-                System.exit(0);
+//                moveTaskToBack(true); // 태스크를 백그라운드로 이동
+//                finishAndRemoveTask(); // 액티비티 종료 + 태스크 리스트에서 지우기
+//                System.exit(0);
+                onBackPressed();
             }
         });
 
