@@ -63,13 +63,12 @@ public class AccountActivity extends AppCompatActivity {
                                 title = data1.getInt("count(case when username = '"+username+"' then 1 end)");
                                 tv_number.setText((title/2)+"개");
 
-                                if(title/2>5){
-                                    acc_mean.setText("좀 하시네요?");
+                                if(title/2>10){
+                                    acc_mean.setText("축하 합니다. 1등입니다!");
                                 }else if(title/2<5){
                                     acc_mean.setText("공부좀 하세요");
                                 }
                             }
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -79,7 +78,6 @@ public class AccountActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
             }
         });
-
         btn_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

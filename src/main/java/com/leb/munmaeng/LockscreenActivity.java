@@ -27,7 +27,6 @@ public class LockscreenActivity extends AppCompatActivity {
     RequestQueue requestQueue;
     TextView lock_word, lock_mean;
     Button btn_start;
-    List<DataVO> data;
     int random, random1;
     String word, mean;
     @Override
@@ -72,7 +71,6 @@ public class LockscreenActivity extends AppCompatActivity {
                             mean = data1.getString("mean");
                             lock_word.setText(word);
                             lock_mean.setText(mean);
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -88,7 +86,6 @@ public class LockscreenActivity extends AppCompatActivity {
 
 
  requestQueue.add(request);
-
 
         btn_start.setOnClickListener(new View.OnClickListener() {
             @Override
