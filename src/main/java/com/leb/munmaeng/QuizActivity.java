@@ -33,7 +33,6 @@ public class QuizActivity extends AppCompatActivity {
     String ans1, ans2, ans3, quiz;
     TextView tv_quiz;
     Button btn_answer1, btn_answer2, btn_answer3;
-    Context context;
     RequestQueue requestQueue;
     String username, url;
     @Override
@@ -125,7 +124,6 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (btn_answer3.getText().equals(ans1)){
-
                     url += "&solve=Y";
                     url += "&word="+ans1;
                     Toast.makeText(getApplicationContext(),"정답입니다!", Toast.LENGTH_SHORT).show();

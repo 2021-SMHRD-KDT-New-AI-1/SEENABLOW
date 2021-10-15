@@ -65,7 +65,7 @@ public class DataAdapter extends BaseAdapter {
         title.setText(data.get(i).getTitle());
         textView2.setText(data.get(i).getWord());
         textView3.setText(data.get(i).getMean());
-        contect.setText( data.get(i).getContent());
+        contect.setText(data.get(i).getContent());
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,22 +89,21 @@ public class DataAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
 
-            if(isclick == false) {
-                btn.setVisibility(btn.VISIBLE);
-                btn_quiz.setVisibility(btn_quiz.VISIBLE);
-                contect.setVisibility(contect.VISIBLE);
-                textView2.setVisibility(textView2.VISIBLE);
-                textView3.setVisibility(textView3.VISIBLE);
-                isclick = true;
-            }else {
-                btn.setVisibility(btn.GONE);
-                btn_quiz.setVisibility(btn_quiz.GONE);
-                contect.setVisibility(contect.GONE);
-                textView2.setVisibility(textView2.GONE);
-                textView3.setVisibility(textView3.GONE);
-                isclick = false;
-            }
-
+                if (isclick == false) {
+                    btn.setVisibility(btn.VISIBLE);
+                    btn_quiz.setVisibility(btn_quiz.VISIBLE);
+                    contect.setVisibility(contect.VISIBLE);
+                    textView2.setVisibility(textView2.VISIBLE);
+                    textView3.setVisibility(textView3.VISIBLE);
+                    isclick = true;
+                } else {
+                    btn.setVisibility(btn.GONE);
+                    btn_quiz.setVisibility(btn_quiz.GONE);
+                    contect.setVisibility(contect.GONE);
+                    textView2.setVisibility(textView2.GONE);
+                    textView3.setVisibility(textView3.GONE);
+                    isclick = false;
+                }
             }
         });
 
@@ -115,24 +114,24 @@ public class DataAdapter extends BaseAdapter {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("단어", data.get(i).getWord());
                 intent.putExtra("뜻", data.get(i).getMean());
-                if(i == 9){
-                    intent.putExtra("틀린답1", data.get(i-2).getWord());
-                    intent.putExtra("틀린답2", data.get(i-1).getWord());
-                }else if(i ==0) {
-                    intent.putExtra("틀린답1", data.get(i+2).getWord());
-                    intent.putExtra("틀린답2", data.get(i+1).getWord());
-                }else{
-                    intent.putExtra("틀린답1", data.get(i-2).getWord());
-                    intent.putExtra("틀린답2", data.get(i+2).getWord());
+                if (i == 9) {
+                    intent.putExtra("틀린답1", data.get(i - 2).getWord());
+                    intent.putExtra("틀린답2", data.get(i - 1).getWord());
+                } else if (i == 0) {
+                    intent.putExtra("틀린답1", data.get(i + 2).getWord());
+                    intent.putExtra("틀린답2", data.get(i + 1).getWord());
+                } else {
+                    intent.putExtra("틀린답1", data.get(i - 2).getWord());
+                    intent.putExtra("틀린답2", data.get(i + 2).getWord());
                 }
                 context.startActivity(intent);
             }
         });
 
 
-
-
         return view;
-    };
+    }
+
+    ;
 }
 
