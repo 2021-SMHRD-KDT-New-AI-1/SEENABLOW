@@ -1,7 +1,9 @@
 package com.leb.munmaeng;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ public class DataAdapter extends BaseAdapter {
     LayoutInflater inflater;//xml파일을 view객체로 변환하는 역활
     Intent intent;
     boolean isclick;
+
 
     public DataAdapter(Context context, int layout, List<DataVO> data) {
         this.context = context;
@@ -57,6 +60,7 @@ public class DataAdapter extends BaseAdapter {
             view = inflater.inflate(layout, null);
         }
 
+
         TextView title = view.findViewById(R.id.lock_word);
         TextView contect = view.findViewById(R.id.acc_mean);
         TextView textView2 = view.findViewById(R.id.tv_quizNum);
@@ -66,6 +70,12 @@ public class DataAdapter extends BaseAdapter {
         textView2.setText(data.get(i).getWord());
         textView3.setText(data.get(i).getMean());
         contect.setText(data.get(i).getContent());
+        
+        
+        
+        // 글자 가운데 정렬
+        contect.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

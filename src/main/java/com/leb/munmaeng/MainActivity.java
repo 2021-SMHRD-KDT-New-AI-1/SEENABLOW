@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -28,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     TextView navi_textview, navi_textview2;
-    String username, age, gender;
+    String username, age, gender, classes;
     Intent intent;
     boolean isclick;
+    ImageView navi_icon;
 
 
     @Override
@@ -53,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
         navi_textview = (TextView) nav_header_view.findViewById(R.id.user_name);
         View nav_header_view2 = navigationView.getHeaderView(0);
         navi_textview2 = (TextView) nav_header_view2.findViewById(R.id.userinfo);
-
+        View nav_header_view3 = navigationView.getHeaderView(0);
+        navi_icon = (ImageView) nav_header_view3.findViewById(R.id.navi_icon);
         toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         //액션바 객체
         ActionBar actionBar = getSupportActionBar();
@@ -63,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
         //뒤로가기 버튼 이미지 적용
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
-
         SharedPreferences sharedPreferences = getSharedPreferences("username", MODE_PRIVATE);
         username = sharedPreferences.getString("username", "");
         age = sharedPreferences.getString("age", "");
         gender = sharedPreferences.getString("gender", "");
+        classes = sharedPreferences.getString("class", "");
 
         card_nov.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
         card_poem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 Intent intent = new Intent(MainActivity.this, NovActivity.class);
                 intent.putExtra("name", "poem");
                 startActivity(intent);
@@ -126,6 +133,23 @@ public class MainActivity extends AppCompatActivity {
         }
         switch (item.getItemId()) {
             case android.R.id.home:
+                if(classes.equals("8")) {
+                    navi_icon.setImageResource(R.drawable.uni_1color);
+                }else if (classes.equals("7")){
+                    navi_icon.setImageResource(R.drawable.uni_2color);
+                }else if(classes.equals("6")){
+                    navi_icon.setImageResource(R.drawable.uni_3color);
+                }else if(classes.equals("5")){
+                    navi_icon.setImageResource(R.drawable.uni_4color);
+                }else if(classes.equals("4")){
+                    navi_icon.setImageResource(R.drawable.uni_5color);
+                }else if(classes.equals("3")){
+                    navi_icon.setImageResource(R.drawable.uni_6color);
+                }else if(classes.equals("2")){
+                    navi_icon.setImageResource(R.drawable.uni_7color);
+                }else if(classes.equals("1")){
+                    navi_icon.setImageResource(R.drawable.uni_8color);
+                }
                 navi_textview.setText(username);
                 navi_textview2.setText(age + " 세 " + gender);
                 drawerLayout.openDrawer(GravityCompat.START);
